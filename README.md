@@ -135,3 +135,79 @@ S spodnjo funkcijo lahko spremenimo stil zemljevida, vire za stile lahko pridobi
     <img src="https://github.com/user-attachments/assets/51321d7f-6541-4f5e-bbec-cfa58a4c4270" alt="Satellite Map" width="300" />
 </div>
 
+### Dodajanje markerjev
+
+MapLibre omogoča dodajanje markerjev na zemljevid, ki uporabljajo MapLibre različico LatLng komponente, markerjem lahko dodamo še naslov in opis
+
+```kt
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
+    private var locations = mutableListOf<Location>()
+
+    // Declare a variable for MapView
+    private lateinit var mapView: MapView
+    private lateinit var mapLibreMap: MapLibreMap
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        createLocations()
+
+        super.onCreate(savedInstanceState)
+
+        MapLibre.getInstance(this)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        mapView = binding.mapView
+
+        mapView.getMapAsync { map ->
+            mapLibreMap = map
+
+            map.setStyle("https://api.maptiler.com/maps/basic-v2/style.json?key=edLZt73rEDhxduO04K4w")
+            map.cameraPosition = CameraPosition.Builder().target(LatLng(46.558870, 15.637961)).zoom(15.0).build()
+
+            showMarkers(locations.size)
+        }
+    }
+
+//OTHER FUNCTIONS
+
+    private fun showMarkers(amount: Int) {
+        if (!this::mapLibreMap.isInitialized || mapView.isDestroyed) {
+            return
+        }
+        mapLibreMap.clear()
+        showGlMarkers()
+    }
+    private fun showGlMarkers() {
+        val markerOptionsList: MutableList<MarkerOptions> = ArrayList()
+
+        for (i in 0 until locations.size) {
+            val currentLandmark = locations[i]
+            val latLng = LatLng(currentLandmark.latitude, currentLandmark.longitude)
+            markerOptionsList.add(
+                MarkerOptions()
+                    .position(latLng)
+                    .title(currentLandmark.name)
+                    .snippet(currentLandmark.description)
+            )
+        }
+        mapLibreMap.addMarkers(markerOptionsList)
+    }
+
+    private fun createLocations() {
+        locations.add(Location(46.55916438086847, 15.638205299929304,"FERI", "Fakulteta za Elektrotehniko in Računalništvo", UUID.randomUUID().toString() ))
+        locations.add(Location(46.559457238497714, 15.63925494021757,"FS", "Fakulteta za Strojništvo", UUID.randomUUID().toString() ))
+        locations.add(Location(46.563677914633594, 15.624264240774403,"FNM", "Fakulteta za Naravoslovje in Matematiko", UUID.randomUUID().toString() ))
+        locations.add(Location(46.56281185042472, 15.646055665346537,"FP", "Pravna fakulteta", UUID.randomUUID().toString() ))
+        locations.add(Location(46.5548922787966, 15.647145824223292,"MF", "Medicinska fakulteta", UUID.randomUUID().toString() ))
+        locations.add(Location(46.56197554442562, 15.652450035025074,"EPF", "Ekonomsko Poslovna Fakulteta", UUID.randomUUID().toString() ))
+        locations.add(Location(46.55923838881618, 15.643262049213327,"Rektorat", "Rektorat univerze v Mariboru", UUID.randomUUID().toString() ))
+    }
+}
+
+```
+
+<img src="https://github.com/user-attachments/assets/63d69ec7-a857-4e90-b630-9b6c3ccc292d" alt="Marker Map" width="300" />
