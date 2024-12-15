@@ -36,7 +36,7 @@ Map libre ima nekaj več kot 300 programerjev, ki so pripomogli, h glavni branž
 
 Za osnovni zemljevid moramo ustvariti postavitev:
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -56,7 +56,7 @@ Za osnovni zemljevid moramo ustvariti postavitev:
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-```
+```kt
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
 
 S spodnjo funkcijo lahko spremenimo stil zemljevida, vire za stile lahko pridobimo na strani [MapTiler](https://cloud.maptiler.com/maps/)
 
-```
+```kt
         mapView.getMapAsync { map ->
             map.setStyle("https://api.maptiler.com/maps/basic-v2/style.json?key=edLZt73rEDhxduO04K4w")
             map.cameraPosition = CameraPosition.Builder().target(LatLng(46.558870, 15.637961)).zoom(15.0).build()
