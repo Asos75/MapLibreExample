@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MapLibreExample"
 include(":app")
- 
+include(":app:mylibrary")
