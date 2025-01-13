@@ -34,7 +34,7 @@ Map libre ima nekaj več kot 300 programerjev, ki so pripomogli, h glavni branž
 
 ### Osnovni zemljevid
 
-Za osnovni zemljevid moramo ustvariti postavitev:
+Za osnovni zemljevid moramo ustvariti postavitev pri čemer uporabljamo komponento org.maplibre.android.maps.MapView
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1182,5 +1182,38 @@ private fun addGeoJsonLayer(mapLibreMap: MapLibreMap) {
 ```
 
 <img src="https://github.com/user-attachments/assets/cf1e427f-4590-44df-9822-ca58291047c8" alt="Marker Map" width="300" />
+
+### Uporaba v aplikaciji
+
+# hisTOURy
+
+**hisTOURy** je aplikacija, namenjena raziskovanju zgodovine in odkrivanju zgodovinskih znamenitosti. Ponuja interaktivno zemljevid z označenimi lokacijami, urnike za vodenje ogledov, možnost ocenjevanja znamenitosti ter možnost izraziti zanimanje za specifična mesta. Z označevanjem zanimanja uporabniki prejmejo obvestila o posebnih ponudbah in organiziranih vodenih ogledih, kar omogoča osebno prilagojeno zgodovinsko izkušnjo.
+
+
+## Namen aplikacije
+Aplikacija hisTOURy je namenjena ljubiteljem zgodovine in ponuja:
+
+- Odkritje zgodovinskih znamenitosti z uporabo interaktivnega zemljevida.
+- Ogled urnikov vodenih ogledov in prijava nanje.
+- Obvestila o vodenih ogledih.
+- Osebno prilagojena obvestila za lokacije, ki so označene kot zanimive.
+
+## Lastnosti
+- Interaktivni zemljevid, ki prikazuje zgodovinske znamenitosti.
+- Ocenjevanje znamenitosti s strani uporabnikov.
+- Obvestila o vodenih ogledih.
+- Osebna obvestila za lokacije, označene kot zanimive.
+
+## Tehnologije
+- Programski jezik: Kotlin (Android)
+- Zemljevidi: MapLibre
+- Obvestila: Android Worker
+- Podatkovna baza: Firebase Firestore
+
+
+<div>
+    <img src="https://github.com/user-attachments/assets/79043fc7-732e-4f6d-91a5-8ca494b1ed9e" alt="Street Map" width="300" />
+    <img src="https://github.com/user-attachments/assets/cc539302-bb49-4795-8835-2963bf14f807" alt="Satellite Map" width="300" />
+</div>
 
 
