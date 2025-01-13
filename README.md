@@ -125,7 +125,7 @@ S spodnjo funkcijo lahko spremenimo stil zemljevida, vire za stile lahko pridobi
 
 ```kt
         mapView.getMapAsync { map ->
-            map.setStyle("https://api.maptiler.com/maps/basic-v2/style.json?key=edLZt73rEDhxduO04K4w")
+            map.setStyle("https://api.maptiler.com/maps/basic-v2/style.json?key=<nope>")
             map.cameraPosition = CameraPosition.Builder().target(LatLng(46.558870, 15.637961)).zoom(15.0).build()
         }
 ```
