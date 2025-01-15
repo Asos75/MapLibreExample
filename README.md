@@ -12,6 +12,22 @@
 - Ima močno odprtokodno skupnost, ki projekt še vedno redno posodablja
 - V primerjavi z nekaterimi ponudniki ne zbira podatke o uporabnikih
 
+## Slabosti
+- V primerjavi z google Maps nima podatkov o prometu, javnih prevozih in ne podpira Street View
+
+## Primerjava z Google Maps in Mapbox
+
+| Lastnost/Aspekt       | MapLibre                       | Mapbox                        | Google Maps                  |
+|-----------------------|---------------------------------|-------------------------------|------------------------------|
+| **Cena**             | Brezplačno (Odprtokodno)       | Cenitev glede na uporabo      | Cenitev glede na uporabo     |
+| **Prilagodljivost**  | Visoka                         | Zelo visoka                   | Omejena                     |
+| **Vir podatkov**     | OpenStreetMap (OSM)            | OSM + Lastniški podatki       | Lastniški podatki (Google)  |
+| **Podpora brez spleta** | Da                          | Da                            | Omejena                     |
+| **Napredne funkcije** | Omejene (t.i. third party tools) | Geokodiranje, promet, navigacija | Geokodiranje, promet, navigacija |
+| **Zasebnost**        | Visoka                         | Srednja                       | Nizka                       |
+| **Najboljša uporaba** | Odprtokodno, zasebnost, prilagodljivi zemljevidi | Napredni zemljevidi, visok promet | Masovne aplikacije, podrobni podatki |
+
+
 ## Licenca
 
 MapLibre je licenčirana pod [BSD-2 licenco](https://github.com/maplibre/maplibre-native/blob/main/LICENSE.md), ki dovoljuje  
