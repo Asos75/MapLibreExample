@@ -1231,6 +1231,8 @@ private fun addGeoJsonLayer(mapLibreMap: MapLibreMap) {
 
 ## Namen aplikacije
 https://github.com/3-letnik-UN-2024-2025/pora-my-second-app-Asos75 (REPO druge naloge)
+
+
 Aplikacija hisTOURy je namenjena ljubiteljem zgodovine in ponuja:
 
 - Odkritje zgodovinskih znamenitosti z uporabo interaktivnega zemljevida.
